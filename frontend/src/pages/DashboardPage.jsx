@@ -72,7 +72,7 @@ function DashboardPage({ currentUser, setCurrentView, cart }) {
           </div>
           <div className="bg-slate-50 rounded-lg p-4 text-center">
             <p className="text-2xl font-bold text-blue-600">{orders.length}</p>
-            <p className="text-sm text-slate-600">My Orders</p>
+            <p className="text-sm text-slate-600">{currentUser.role === 'admin' ? 'Orders' : 'My Orders'}</p>
           </div>
           <div className="bg-slate-50 rounded-lg p-4 text-center">
             <p className="text-2xl font-bold text-blue-600">{cartItemCount}</p>
@@ -91,7 +91,7 @@ function DashboardPage({ currentUser, setCurrentView, cart }) {
             onClick={() => setCurrentView('orders')}
             className="border border-gray-300 px-4 py-2 rounded hover:bg-gray-50"
           >
-            My Orders
+            {currentUser.role === 'admin' ? 'Orders' : 'My Orders'}
           </button>
           <button
             onClick={() => setCurrentView('cart')}

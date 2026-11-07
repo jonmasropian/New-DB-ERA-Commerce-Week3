@@ -33,7 +33,7 @@ function Navbar({ currentUser, setCurrentView, setCurrentUser, setToken, cart })
           onClick={() => setCurrentView('orders')}
           className="text-slate-300 hover:text-white text-sm"
         >
-          My Orders
+          {currentUser?.role === 'admin' ? 'Orders' : 'My Orders'}
         </button>
 
         {currentUser?.role === 'admin' && (
